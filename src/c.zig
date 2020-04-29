@@ -1,8 +1,16 @@
 pub usingnamespace @cImport({
-    @cDefine("WLR_USE_UNSTABLE", {});
-    @cInclude("time.h");
+    @cDefine("_POSIX_C_SOURCE", "200809L");
+
+    // libc headers
     @cInclude("stdlib.h");
+    @cInclude("include/timespec_hack.h");
+    @cInclude("time.h");
+
+    // wayland headers
     @cInclude("wayland-server-core.h");
+
+    // wlroots headers
+    @cDefine("WLR_USE_UNSTABLE", {});
     //@cInclude("wlr/backend.h");
     //@cInclude("wlr/render/wlr_renderer.h");
     @cInclude("wlr/types/wlr_buffer.h");
@@ -24,6 +32,8 @@ pub usingnamespace @cImport({
     @cInclude("wlr/types/wlr_xdg_output_v1.h");
     @cInclude("wlr/types/wlr_xdg_shell.h");
     @cInclude("wlr/util/log.h");
+
+    // xkbcommon headers
     @cInclude("xkbcommon/xkbcommon.h");
 
     // Contains a subset of functions from wlr/backend.h and wlr/render/wlr_renderer.h
