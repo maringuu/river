@@ -9,6 +9,8 @@
 #define __NEED_time_t
 #include <bits/alltypes.h>
 
+_Static_assert(sizeof(time_t) == sizeof(long), "assert");
+
 struct timespec {
 	time_t tv_sec;
 	long tv_nsec;
