@@ -53,6 +53,9 @@ used to control and configure river.
 	negative floating point number (such as 0.05) where 1 corresponds to
 	the whole screen.
 
+*move* *up*|*down*
+	Moves the focused view either *up* or *down* the focus stack.
+
 *send-to-output* *next*|*previous*
 	Send the focused view to the next or the previous output.
 
